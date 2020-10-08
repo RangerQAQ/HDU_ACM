@@ -20,14 +20,28 @@ int main(){
         f[2]=1;
         int tag1;
         int tag2;
+        int t=-1;
         for(int i=3;i<=100;i++){
-            f[i]=a*f[i-1]+b*f[i-2];
+            f[i]=(a*f[i-1]+b*f[i-2])%7;
         }
         for(int j=1;j<100;j++){
-            for(int k=1;k<100;k++){
+            if(t != -1){
+                break;
+            }
+            for(int k=j+1;k<100;k++){
+                if((f[j]==f[k]) && (f[j+1]==f[k+1])){
+                    tag1=j;
+                    tag2=k;
+                    t=k-j;
+                    break;
+                }
 
             }
         }
+        if(n<=tag1)
+		cout<<f[n]<<endl;
+		else
+		cout<<f[(n-tag1)%t+tag1]<<endl;
       
 
     }
