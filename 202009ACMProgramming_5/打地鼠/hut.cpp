@@ -3,7 +3,7 @@
 #include <cmath> 
 using namespace std;
  
-int f[21][21]={0};
+int f[21][21]={0};//f[i][j]表示i+1时刻j位置有老鼠
 int dp[21][21]={0};
 int main()
 {
